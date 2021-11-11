@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/605e2c4239.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/style.css" />
+    <title>Weather</title>
+  </head>
+  <body>
+    <div class="container">
+      <br />
+      <h1 class="border">Weather</h1>
+      <br />
+
+      <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand"></a>
+          <form class="d-flex" id="search-form">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Enter City..."
+              autofocus="on"
+              autocomplete="off"
+              id="city-input"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </nav>
+
+      <div class="currentDate" id="selector-date"></div>
+      <div class="card" style="width: 70%">
+        <p id="city"></p>
+        <div class="location">
+          <div class="col-3">
+            <button class="btn btn-success w-100" id="current-location-button">
+              Current
+            </button>
+          </div>
+          <img
+            src="imgs/antonovevg-922pFScHe7k-unsplash.jpg"
+            class="card-img-top"
+            alt="blue skies"
+          />
+          <br />
+          <ul>
+            <li id="description"></li>
+          </ul>
+
+          <div class="card-body">
+            <i class="fas fa-sun sunny-icon"></i>
+            <span class="temperature" id="temperature"></span>
+            <span class="units">
+              <a href="#" id="fahrenheit-link">˚F</a>
+              |
+              <a href="#" id="celsius-link">˚C</a>
+            </span>
+
+            <br />
+            <div class="current-info">
+              <ul>
+                <li>Precipitation: <span id="precipitation"></span>%</li>
+                <li>Wind Spd: <span id="wind"></span> km/h</li>
+                <li>Humidity: <span id="humidity"></span>%</li>
+              </ul>
+            </div>
+
+            <div class="border container-sm">
+              <div class="row">
+                <div class="col-6">
+                  Saturday
+                  <div><i class="fas fa-wind wind-icon"></i>☁️</div>
+                  <ul>
+                    <li>Precipitation: <span>0</span>%</li>
+                    <li>Wind Spd: <span>13</span>km/h</li>
+                    <li>Humidity: <span>43</span>%</li>
+                  </ul>
+                </div>
+
+                <div class="col-6">
+                  Sunday
+                  <div><i class="fas fa-cloud-sun suncloud-icon"></i></div>
+                  <ul>
+                    <li>Precipitation: <span>0</span>%</li>
+                    <li>Wind Spd: <span>9</span>km/h</li>
+                    <li>Humidity: <span>48</span>%</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/main.js"></script>
+  </body>
+</html>
