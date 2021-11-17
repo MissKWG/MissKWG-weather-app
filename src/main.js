@@ -52,9 +52,6 @@ function displayWeatherCondition(response) {
   );
 }
 
- document.querySelector("#description").innerHTML =
-   response.data.weather[0].main;
-
 function search(event) {
   event.preventDefault();
   let apiKey = "37841618efb8bb96a35c1afb0bcd8e2f";
