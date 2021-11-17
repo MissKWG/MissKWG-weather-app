@@ -52,6 +52,7 @@ function displayWeatherCondition(response) {
     response.data.wind.speed
   );
 }
+   response.data.weather[0].main;
 
 function search(event) {
   event.preventDefault();
