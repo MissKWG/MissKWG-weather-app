@@ -42,7 +42,6 @@ let currentDate = document.querySelector("#selector-date");
 currentDate.innerHTML = `${day}, ${month} ${date}, ${hour}:${minute} ${amPm}`;
 
 function displayWeatherCondition(response) {
-  console.log(response.data.name);
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
@@ -52,6 +51,9 @@ function displayWeatherCondition(response) {
     response.data.wind.speed
   );
 }
+
+ document.querySelector("#description").innerHTML =
+   response.data.weather[0].main;
 
 function search(event) {
   event.preventDefault();
