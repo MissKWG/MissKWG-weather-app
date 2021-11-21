@@ -8,15 +8,21 @@ body {
   font-family: "Roboto", sans-serif;
   background-size: cover;
 }
+
 h1 {
+  margin-top: 10px;
   opacity: 0.9;
-  color: #352f44;
+  color: mediumpurple;
+  font-family: Arial, Helvetica, sans-serif;
   text-align: center;
-  font-weight: 500px;
-  font-size: 30px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+li {
+  list-style: none;
 }
 .container {
-  text-align: center;
   background: linear-gradient(
     to bottom,
     rgba(252, 146, 220, 0.4),
@@ -30,73 +36,49 @@ h1 {
   max-width: 500px;
 }
 .form-control {
+  margin-top: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 5px 5px 5px;
 }
-.me-2 {
-  margin: auto;
+
+.btn-outline-success {
+  margin-top: 20px;
+  color: rgb(45, 52, 56);
+  background-color: #00ffff;
 }
+
 .btn-success {
   display: block;
-  margin-bottom: 10px;
-  color: gray;
+  color: rgb(103, 103, 104);
   background-color: lavenderblush;
   border-color: silver;
   border-radius: 50px;
-  padding-top: 0;
-  padding-bottom: 0;
 }
-p {
-  margin-top: 10px;
-  color: mediumpurple;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
-  font-weight: bold;
+
+.desciption {
+  text-align: center;
 }
 
 .currentDate {
+  margin-top: 1px;
+  margin-bottom: 10px;
+  padding-bottom: 1px;
   font-size: 13px;
   position: absolute;
   top: 0;
   text-align: left;
   color: #706381;
 }
-.city {
-  font-size: 14px;
-}
+
 .current-city {
   font-size: 11px;
   color: #706381;
 }
-.time {
-  font-size: 13px;
-  position: flex;
-  top: 0;
-  text-align: right;
-  color: #706381;
-}
-.card {
-  display: block;
-  margin: 0 auto;
-  max-width: 100%;
-  background-image: cover;
-}
-
-.card-img-top {
-  display: flex;
-  margin: 0 auto;
-  padding: 0;
-  max-width: 500px;
-}
-
-li {
-  list-style: none;
-}
 
 .weather-icons {
-  text-align: center;
+  position: relative;
   font-size: 50px;
 }
 
@@ -125,14 +107,12 @@ li {
   opacity: 0.5;
 }
 
-.card-title {
-  font-size: 30px;
-  text-align: center;
-  color: #352f44;
-  opacity: 0.5;
+.weather-temperature.active {
+  color: rgb(10, 10, 10);
+  cursor: default;
+  text-decoration: none;
 }
-.card-text {
-  display: block;
-  margin: 0 auto;
-  background-image: cover;
+
+.weather-temperature .active:hover {
+  text-decoration: none;
 }
