@@ -23,116 +23,115 @@
     />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
+
     <title>Weather</title>
   </head>
   <body>
     <div class="container">
       <div class="weather-app-wrapper">
-        <form class="d-flex" id="search-form">
+        <form id="search-form">
           <div class="row">
             <div class="col-9">
               <input
+                class="form-control me-2"
                 type="search"
                 placeholder="Enter City..."
-                class="form-control search-input"
                 autofocus="on"
                 autocomplete="off"
                 id="city-input"
                 aria-label="Search"
               />
-              <div class="col-3">
-                <button
-                  type="submit"
-                  value="search"
-                  class="btn btn-outline-success"
-                >
-                  Search
-                </button>
-              </div>
+            </div>
+            <div class="col-3">
+              <button
+                type="submit"
+                value="search"
+                class="btn btn-outline-success w-100"
+              >
+                Search
+              </button>
             </div>
           </div>
         </form>
+
         <div class="currentDate" id="date"></div>
-        <div class="card" style="width: 100%">
-          <h1 id="city"></h1>
-          <div class="location">
-            <div class="current-location">
-              <button
-                class="btn btn-success mx-auto"
-                id="current-location-button"
-              >
-                Current
-              </button>
-            </div>
 
-            <ul>
-              <li id="description"></li>
-            </ul>
+        <h1 id="city"></h1>
+        <div class="location">
+          <div class="current-location">
+            <button
+              class="btn btn-success mx-auto"
+              id="current-location-button"
+            >
+              Current
+            </button>
+          </div>
 
-            <div class="row">
-              <div class="col-6">
-                <div class="clearfix weather-temperature">
-                  <img src="" id="icons" alt="clear" class="float-left" />
-                  <div class="float-left">
-                    <strong class="temperature" id="temperature"></strong>
-                    <span class="units">
-                      <a href="#" id="fahrenheit-link">˚F</a>|
-                      <a href="#" id="celsius-link">˚C</a></span
-                    >
-                  </div>
+          <ul>
+            <li id="description"></li>
+          </ul>
+          <div class="row">
+            <div class="col-6">
+              <div class="clearfix weather-temperature">
+                <img src="" id="icon" alt="clear" class="float-left" />
+                <div class="float-left">
+                  <strong class="temperature" id="temperature"></strong>
+                  <span class="units">
+                    <a href="#" id="fahrenheit-link" class="active">˚F</a>|
+                    <a href="#" id="celcius-link">˚C</a></span
+                  >
                 </div>
+              </div>
+              <ul>
+                <li>Wind: <span id="wind"></span> km/h</li>
+                <li>Humidity:<span id="humidity"></span>%</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-6">
+            <img
+              src="src/imgs/antonovevg-922pFScHe7k-unsplash.jpg"
+              class="card-img-top"
+              alt="blue skies"
+            />
+          </div>
+
+          <div class="border container">
+            <div class="row">
+              <div class="col-3">
+                Saturday
+                <div><i class="fas fa-wind wind-icon"></i>☁️</div>
                 <ul>
-                  <li>Wind: <span id="wind"></span> km/h</li>
-                  <li>Humidity: <span id="humidity"></span>%</li>
+                  <li>Wind: <span>13</span>km/h</li>
+                  <li>Humidity: <span>43</span>%</li>
                 </ul>
               </div>
-            </div>
-            <div class="col-6">
-              <img
-                src="src/imgs/antonovevg-922pFScHe7k-unsplash.jpg"
-                class="card-img-top"
-                alt="blue skies"
-              />
-            </div>
 
-            <div class="border container">
-              <div class="row">
-                <div class="col-3">
-                  Saturday
-                  <div><i class="fas fa-wind wind-icon"></i>☁️</div>
-                  <ul>
-                    <li>Wind: <span>9</span>km/h</li>
-                    <li>Humidity: <span>48</span>%</li>
-                  </ul>
-                </div>
+              <div class="col-3">
+                Sunday
+                <div><i class="fas fa-cloud-sun suncloud-icon"></i></div>
+                <ul>
+                  <li>Wind: <span>9</span>km/h</li>
+                  <li>Humidity: <span>48</span>%</li>
+                </ul>
+              </div>
 
-                <div class="col-3">
-                  Sunday
-                  <div><i class="fas fa-cloud-sun suncloud-icon"></i></div>
-                  <ul>
-                    <li>Wind: <span>10</span>km/h</li>
-                    <li>Humidity: <span>64</span>%</li>
-                  </ul>
-                </div>
+              <div class="col-3">
+                Monday
+                <div><i class="fas fa-cloud-sun suncloud-icon"></i></div>
+                <ul>
+                  <li>Wind: <span>9</span>km/h</li>
+                  <li>Humidity: <span>48</span>%</li>
+                </ul>
+              </div>
 
-                <div class="col-3">
-                  Monday
-                  <div><i class="fas fa-cloud-sun suncloud-icon"></i></div>
-                  <ul>
-                    <li>Wind: <span>17</span>km/h</li>
-                    <li>Humidity: <span>62</span>%</li>
-                  </ul>
-                </div>
-
-                <div class="col-3">
-                  Tuesday
-                  <div><i class="fas fa-cloud-sun suncloud-icon"></i></div>
-                  <ul>
-                    <li>Precipitation: <span>4</span>%</li>
-                    <li>Wind Spd: <span>12</span>km/h</li>
-                    <li>Humidity: <span>54</span>%</li>
-                  </ul>
-                </div>
+              <div class="col-3">
+                Tuesday
+                <div><i class="fas fa-cloud-sun suncloud-icon"></i></div>
+                <ul>
+                  <li>Wind: <span>9</span>km/h</li>
+                  <li>Humidity: <span>48</span>%</li>
+                </ul>
               </div>
             </div>
           </div>
