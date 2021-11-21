@@ -27,11 +27,7 @@
   </head>
   <body>
     <div class="container">
-      <br />
-      <h1 class="border">Weather</h1>
-      <br />
-
-      <nav class="navbar navbar-light bg-light">
+      <div class="weather-app-wrapper">
         <div class="container-fluid">
           <a class="navbar-brand"></a>
           <form class="d-flex" id="search-form">
@@ -49,105 +45,103 @@
             </button>
           </form>
         </div>
-      </nav>
 
-      <div class="currentDate" id="selector-date"></div>
-      <div class="card" style="width: 100%">
-        <p id="city"></p>
-        <div class="location">
-          <div class="current-location">
-            <button
-              class="btn btn-success mx-auto"
-              id="current-location-button"
-            >
-              Current
-            </button>
-          </div>
-
-          <img
-            src="src/imgs/antonovevg-922pFScHe7k-unsplash.jpg"
-            class="card-img-top"
-            alt="blue skies"
-          />
-          <br />
-          <ul>
-            <li id="description"></li>
-          </ul>
-
-          <div class="card-body">
-            <i class="fas fa-sun sunny-icon"></i>
-            <span class="temperature" id="temperature"></span>
-            <span class="units">
-              <a href="#" id="fahrenheit-link">˚F</a>
-              |
-              <a href="#" id="celsius-link">˚C</a>
-            </span>
-
-            <br />
-            <div class="current-info">
-              <ul>
-                <li>Precipitation: <span id="precipitation"></span>%</li>
-                <li>Wind Spd: <span id="wind"></span> km/h</li>
-                <li>Humidity: <span id="humidity"></span>%</li>
-              </ul>
+        <div class="currentDate" id="selector-date"></div>
+        <div class="card" style="width: 100%">
+          <p id="city"></p>
+          <div class="location">
+            <div class="current-location">
+              <button
+                class="btn btn-success mx-auto"
+                id="current-location-button"
+              >
+                Current
+              </button>
             </div>
 
-            <div class="border container">
-              <div class="row">
-                <div class="col-3">
-                  Saturday
-                  <div><i class="fas fa-wind wind-icon"></i>☁️</div>
-                  <ul>
-                    <li>Precipitation: <span>0</span>%</li>
-                    <li>Wind Spd: <span>13</span>km/h</li>
-                    <li>Humidity: <span>43</span>%</li>
-                  </ul>
-                </div>
+            <img
+              src="src/imgs/antonovevg-922pFScHe7k-unsplash.jpg"
+              class="card-img-top"
+              alt="blue skies"
+            />
+            <ul>
+              <li id="description"></li>
+            </ul>
 
-                <div class="col-3">
-                  Sunday
-                  <div><i class="fas fa-cloud-sun suncloud-icon"></i></div>
-                  <ul>
-                    <li>Precipitation: <span>2</span>%</li>
-                    <li>Wind Spd: <span>10</span>km/h</li>
-                    <li>Humidity: <span>64</span>%</li>
-                  </ul>
-                </div>
+            <div class="card-body">
+              <i class="fas fa-sun sunny-icon"></i>
+              <span class="temperature" id="temperature"></span>
+              <span class="units">
+                <a href="#" id="fahrenheit-link">˚F</a>
+                |
+                <a href="#" id="celsius-link">˚C</a>
+              </span>
 
-                <div class="col-3">
-                  Monday
-                  <div><i class="fas fa-cloud-sun suncloud-icon"></i></div>
-                  <ul>
-                    <li>Precipitation: <span>13</span>%</li>
-                    <li>Wind Spd: <span>17</span>km/h</li>
-                    <li>Humidity: <span>62</span>%</li>
-                  </ul>
-                </div>
+              <div class="current-info">
+                <ul>
+                  <li>Precipitation: <span id="precipitation"></span>%</li>
+                  <li>Wind Spd: <span id="wind"></span> km/h</li>
+                  <li>Humidity: <span id="humidity"></span>%</li>
+                </ul>
+              </div>
 
-                <div class="col-3">
-                  Tuesday
-                  <div><i class="fas fa-cloud-sun suncloud-icon"></i></div>
-                  <ul>
-                    <li>Precipitation: <span>4</span>%</li>
-                    <li>Wind Spd: <span>12</span>km/h</li>
-                    <li>Humidity: <span>54</span>%</li>
-                  </ul>
+              <div class="border container">
+                <div class="row">
+                  <div class="col-3">
+                    Saturday
+                    <div><i class="fas fa-wind wind-icon"></i>☁️</div>
+                    <ul>
+                      <li>Precipitation: <span>0</span>%</li>
+                      <li>Wind Spd: <span>13</span>km/h</li>
+                      <li>Humidity: <span>43</span>%</li>
+                    </ul>
+                  </div>
+
+                  <div class="col-3">
+                    Sunday
+                    <div><i class="fas fa-cloud-sun suncloud-icon"></i></div>
+                    <ul>
+                      <li>Precipitation: <span>2</span>%</li>
+                      <li>Wind Spd: <span>10</span>km/h</li>
+                      <li>Humidity: <span>64</span>%</li>
+                    </ul>
+                  </div>
+
+                  <div class="col-3">
+                    Monday
+                    <div><i class="fas fa-cloud-sun suncloud-icon"></i></div>
+                    <ul>
+                      <li>Precipitation: <span>13</span>%</li>
+                      <li>Wind Spd: <span>17</span>km/h</li>
+                      <li>Humidity: <span>62</span>%</li>
+                    </ul>
+                  </div>
+
+                  <div class="col-3">
+                    Tuesday
+                    <div><i class="fas fa-cloud-sun suncloud-icon"></i></div>
+                    <ul>
+                      <li>Precipitation: <span>4</span>%</li>
+                      <li>Wind Spd: <span>12</span>km/h</li>
+                      <li>Humidity: <span>54</span>%</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <small>
+        <a
+          href="https://github.com/MissKWG/MissKWG-weather-app"
+          target="blank"
+          class="github-link"
+          >Open-source code</a
+        >
+        by Akeila Ramjag
+      </small>
     </div>
-    <small>
-      <a
-        href="https://github.com/MissKWG/MissKWG-weather-app"
-        target="blank"
-        class="github-link"
-        >Open-source code</a
-      >
-      "by Akeila Ramjag"
-    </small>
     <script src="src/main.js"></script>
   </body>
 </html>
