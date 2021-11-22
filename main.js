@@ -1,13 +1,13 @@
 function formatDate(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
-
-  hours = hours > 12 ? hours - 12 : hours;
-  hours = ("0" + hours).slice(-2);
-
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
   let minutes = date.getMinutes();
-  minutes = ("0" + minutes).slice(-2);
-  let amPm = hours < 12 ? "AM" : "PM";
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
 
   let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
   let day = days[date.getDay()];
@@ -74,10 +74,10 @@ let celsiusTemperture = null;
 let form = document.querySelector("#search-form");
 form.addEventListener("sumit", handleSubmit);
 
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCelsiusTemperature);
-
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 searchCity("California");
