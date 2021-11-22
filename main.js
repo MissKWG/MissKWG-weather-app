@@ -1,13 +1,13 @@
 function formatDate(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
+
+  hours = hours > 12 ? hours - 12 : hours;
+  hours = ("0" + hours).slice(-2);
+
   let minutes = date.getMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
+  minutes = ("0" + minutes).slice(-2);
+  let amPm = hours < 12 ? "AM" : "PM";
 
   let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
   let day = days[date.getDay()];
@@ -41,13 +41,14 @@ function displayWeatherCondition(response) {
 
 function search(city) {
   let apiKey = "37841618efb8bb96a35c1afb0bcd8e2f";
-  let apiUrl = `api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayWeatherCondition);
 }
 
 function handleSubmit(event) {
   event.preventDefault();
   let cityInputElement = document.querySelector("#city-input");
+  console.log(cityInputElement);
   search(cityInputElement.value);
 }
 
@@ -72,12 +73,12 @@ function displayCelsiusTemperature(event) {
 let celsiusTemperture = null;
 
 let form = document.querySelector("#search-form");
-form.addEventListener("sumit", handleSubmit);
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+form.addEventListener("submit", handleSubmit);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
-searchCity("California");
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+search("California");
