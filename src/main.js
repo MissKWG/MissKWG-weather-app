@@ -41,13 +41,14 @@ function displayWeatherCondition(response) {
 
 function search(city) {
   let apiKey = "37841618efb8bb96a35c1afb0bcd8e2f";
-  let apiUrl = `api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayWeatherCondition);
 }
 
 function handleSubmit(event) {
   event.preventDefault();
   let cityInputElement = document.querySelector("#city-input");
+  console.log(cityInputElement);
   search(cityInputElement.value);
 }
 
@@ -57,7 +58,7 @@ function displayFahrenheitTemperature(event) {
 
   celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
-  let fahrenheitTemperature = (celciusTemperture * 9) / 5 + 32;
+  let fahrenheitTemperature = (celsiusTemperture * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
@@ -66,13 +67,13 @@ function displayCelsiusTemperature(event) {
   celsiusLink.classList.add("active");
   fahrenheitLink.classList.remove("active");
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(celciusTemperature);
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
 let celsiusTemperture = null;
 
 let form = document.querySelector("#search-form");
-form.addEventListener("sumit", handleSubmit);
+form.addEventListener("submit", handleSubmit);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
@@ -80,4 +81,4 @@ celsiusLink.addEventListener("click", displayCelsiusTemperature);
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
-searchCity("California");
+search("California");
