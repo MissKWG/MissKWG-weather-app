@@ -35,7 +35,7 @@
               <input
                 class="form-control me-2"
                 type="search"
-                placeholder="Enter City..."
+                placeholder="Search for a City..."
                 autofocus="on"
                 autocomplete="off"
                 id="city-input"
@@ -57,18 +57,20 @@
         <div class="currentDate" id="date"></div>
 
         <h1 id="city"></h1>
-
+        <div class="location">
           <ul>
-            <li id="description"></li>
+            <li class="condition" id="description"></li>
           </ul>
 
-          <div class="">
+          <div class="weather-temp">
             <div class="clearfix weather-temperature">
               <img src="" id="icon" alt="clear" class="float-left" />
               <div class="float-left">
                 <strong class="temperature" id="temperature"></strong>
                 <span class="units"> ˚F</span>
               </div>
+            </div>
+            <div>
               <ul>
                 <li>Wind: <span id="wind"></span> m/h</li>
                 <li>Humidity:<span id="humidity"></span>%</li>
