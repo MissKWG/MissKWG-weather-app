@@ -5,14 +5,13 @@
 }
 
 body {
-  font-family: "Roboto", sans-serif;
-  background-size: cover;
+  text-align: center;
 }
 
 h1 {
   margin-top: 10px;
   opacity: 0.9;
-  color: mediumpurple;
+  color: black;
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
   font-weight: bold;
@@ -22,6 +21,7 @@ h1 {
 li {
   list-style: none;
 }
+
 .container {
   background: linear-gradient(
     to bottom,
@@ -33,31 +33,36 @@ li {
   margin: 0 auto;
   border-radius: 10px;
   padding: 10px;
-  max-width: 500px;
+  max-width: 600px;
 }
+
 .form-control {
   margin-top: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 5px 5px 5px;
+  border-radius: 16px 0px 16px 0px;
+  border-bottom: 3px solid #6d42c7;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .btn-outline-success {
+  color: #8f8f92;
   margin-top: 20px;
-  color: rgb(45, 52, 56);
   background-color: #00ffff;
+  border: none;
 }
 
-.btn-success {
-  display: block;
-  color: rgb(103, 103, 104);
-  background-color: lavenderblush;
+.btn-outline-success:hover {
+  background-color: #f8e71c;
   border-color: silver;
-  border-radius: 50px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.2);
 }
 
-.desciption {
+.condition {
+  font-size: bold;
   text-align: center;
 }
 
@@ -77,27 +82,10 @@ li {
   color: #706381;
 }
 
-.weather-icons {
-  position: relative;
-  font-size: 50px;
-}
-
-.sunny-icon {
-  font-size: 70px;
-  color: #fac70b;
-}
-.wind-icon {
-  color: #d3d6db;
-}
-.suncloud-icon {
-  color: #ff2400;
-}
-
 .temperature {
   font-size: 50px;
   font-weight: bold;
   color: #0c9cee;
-  padding-bottom: 30px;
 }
 
 .current-info {
@@ -115,4 +103,8 @@ li {
 
 .weather-temperature .active:hover {
   text-decoration: none;
+}
+
+.weather-forecast-temperature-min {
+  opacity: 0.7;
 }
